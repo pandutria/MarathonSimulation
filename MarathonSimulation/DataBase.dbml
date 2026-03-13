@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MarathonDB" Class="DataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-RG96T7L;Initial Catalog=MarathonDB;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="MarathonSimulation.Properties.Settings" SettingsPropertyName="MarathonDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Events" Member="Events">
+    <Type Name="Event">
+      <Column Name="EventID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EventName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DistanceKm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Event_Participant" Member="Participants" ThisKey="EventID" OtherKey="EventID" Type="Participant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Participants" Member="Participants">
+    <Type Name="Participant">
+      <Column Name="ParticipantID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EventID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Speed" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Association Name="Event_Participant" Member="Event" ThisKey="EventID" OtherKey="EventID" Type="Event" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
