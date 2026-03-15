@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +73,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaceRangkingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RaceRangkingForm.Designer.cs">
+      <DependentUpon>RaceRangkingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimulationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimulationForm.Designer.cs">
+      <DependentUpon>SimulationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcParticipant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcParticipant.Designer.cs">
+      <DependentUpon>UcParticipant.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddEditParticipantForm.resx">
+      <DependentUpon>AddEditParticipantForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +109,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RaceRangkingForm.resx">
+      <DependentUpon>RaceRangkingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimulationForm.resx">
+      <DependentUpon>SimulationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcParticipant.resx">
+      <DependentUpon>UcParticipant.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataBase.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataBase.designer.cs</LastGenOutput>

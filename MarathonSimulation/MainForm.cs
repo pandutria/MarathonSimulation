@@ -37,6 +37,14 @@ namespace MarathonSimulation
         private void btnSimulation_Click(object sender, EventArgs e)
         {
             Event = db.Events.FirstOrDefault(x => x.EventID == Convert.ToInt32(cbEvent.SelectedValue));
+
+            if(Event != null)
+            {
+                new SimulationForm().Show();
+                Hide();
+            }
+
+            
         }
     }
 }
