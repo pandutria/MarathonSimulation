@@ -47,19 +47,15 @@ namespace MarathonSimulation
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            pb.Increment(Convert.ToInt32(distance / time) * 100);
+            pb.Increment(Convert.ToInt32(distance / time));
 
             if (pb.Value == pb.Maximum)
             {
                 isDone = true;
             }
 
-            lblName.Left += Convert.ToInt32((distance / time));
-
-            if (lblName.Left == lblName.Width)
-            {
-                lblName.Left += 0;
-            }
+            var newX = (Convert.ToDecimal(Convert.ToDecimal(Convert.ToDecimal(pb.Value - pb.Minimum) / Convert.ToDecimal(pb.Maximum - pb.Minimum))) * pb.Width);
+            lblName.Location = new Point(Convert.ToInt32(newX), lblName.Location.Y);
         }
     }
 }
