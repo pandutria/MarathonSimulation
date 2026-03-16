@@ -42,10 +42,9 @@
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(12, 11);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(44, 16);
+            this.lblName.Size = new System.Drawing.Size(579, 16);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "label1";
             // 
@@ -59,7 +58,6 @@
             this.Size = new System.Drawing.Size(606, 77);
             this.Load += new System.EventHandler(this.UcParticipant_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -32,9 +32,11 @@ namespace MarathonSimulation
             Text = $"Simulation [{MainForm.Event.EventName}]";
             flowLayoutPanel1.Controls.Clear();
             flowLayoutPanel1.AutoScroll = true;
-            
-
+            flowLayoutPanel1.AutoSize = false;
+       
             events = db.Events.FirstOrDefault(x => x.EventID == MainForm.Event.EventID);
+
+            var random = new Random();
 
             if (events != null)
             {
@@ -42,7 +44,7 @@ namespace MarathonSimulation
 
                 foreach(var i in participant)
                 {
-                    flowLayoutPanel1.Controls.Add(new UcParticipant(i, events, timer1));
+                    flowLayoutPanel1.Controls.Add(new UcParticipant(i, events, timer1, random));
                 }
             }
         }
